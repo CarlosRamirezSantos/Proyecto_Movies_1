@@ -34,12 +34,17 @@ const removeMovieDeck = (deck) => {
     return deck.pop();
 };
 
-// Escuchar el evento click del botón "Mostrar película"
+
 const btnMostrarPelicula = document.getElementById('btnMostrarPelicula');
 const peliculaCaratula = document.getElementById("imgCaratula");
+const elementosPelicula = document.getElementById("elementos-pelicula")
+
+
 
     btnMostrarPelicula.addEventListener('click', () => {
         const pelicula = removeMovieDeck(movieDeck);
+
+        elementosPelicula.innerHTML= ""
         if (pelicula) {
             // Actualiza la imagen con la película seleccionada
             peliculaCaratula.src = `assets/movies/${pelicula}.jpg`;
@@ -48,3 +53,25 @@ const peliculaCaratula = document.getElementById("imgCaratula");
             alert('No quedan más películas disponibles');
         }
     });
+
+
+const btnAdivina = document.getElementById('btnAdivina');
+const contenedor = document.getElementById('elementos-pelicula');
+
+btnAdivina.addEventListener('click', () => {
+    if (elementDeck.length === 0) {
+        alert("No quedan más recursos");
+        return;
+    }
+
+    const recurso = elementDeck.pop(); 
+    const div = document.createElement("div");
+    div.classList.add("elemento");
+
+    const img = document.createElement("img");
+    img.classList.add("recurso");
+    img.src = `assets/characters/${recurso}.jpg`;
+
+    div.appendChild(img);
+    contenedor.appendChild(div);
+});

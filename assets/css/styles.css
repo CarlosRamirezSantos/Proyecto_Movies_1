@@ -39,10 +39,13 @@ html, body {
     border-style: solid;
 }
 
-/* SOLO los de Adivina solapados */
-#elementos-pelicula .elemento {
-    margin-left: -35px;
+
+#elementos-pelicula {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 10px; 
 }
+
 
 #elementos-pelicula .elemento:first-child {
     margin-left: 0;
