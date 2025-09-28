@@ -12,20 +12,24 @@ html, body {
     font-size: 25px;
 }
 
-.pelicula {
-    position: relative;
-    width: 200px;
-    left: 65px;
+
+#pelicula-caratula {
+    display: flex;
+    gap: 20px;       
+    height: 320px;
 }
 
+
+#elementos-pelicula {
+    display: flex;
+    height: 320px;
+}
+
+
 .elemento {
-    position: relative;
     background-color: black;
     width: 210px;
     height: 310px;
-    left: 100px;
-    margin-left: -35px;
-    float:left;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,10 +39,17 @@ html, body {
     border-style: solid;
 }
 
-.recurso {
-    width: 200px;
+/* SOLO los de Adivina solapados */
+#elementos-pelicula .elemento {
+    margin-left: -35px;
 }
 
-#elementos-pelicula, #pelicula-caratula {
-    height: 320px;
+#elementos-pelicula .elemento:first-child {
+    margin-left: 0;
+}
+
+.recurso {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
 }

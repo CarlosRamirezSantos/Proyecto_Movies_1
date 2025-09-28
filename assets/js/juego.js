@@ -35,19 +35,16 @@ const removeMovieDeck = (deck) => {
 };
 
 // Escuchar el evento click del botón "Mostrar película"
-document.addEventListener('DOMContentLoaded', () => {
-    const btnMostrarPelicula = document.getElementById('btnMostrarPelicula');
-    const peliculaCaratula = document.getElementById('pelicula-caratula');
+const btnMostrarPelicula = document.getElementById('btnMostrarPelicula');
+const peliculaCaratula = document.getElementById("imgCaratula");
 
     btnMostrarPelicula.addEventListener('click', () => {
         const pelicula = removeMovieDeck(movieDeck);
         if (pelicula) {
             // Actualiza la imagen con la película seleccionada
-            peliculaCaratula.innerHTML = `
-                <img class="elemento" src="assets/movies/${pelicula}.jpg" alt="Película">
-            `;
+            peliculaCaratula.src = `assets/movies/${pelicula}.jpg`;
+            
         } else {
             alert('No quedan más películas disponibles');
         }
     });
-});
