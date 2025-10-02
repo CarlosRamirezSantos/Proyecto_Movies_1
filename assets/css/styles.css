@@ -1,58 +1,143 @@
-html, body {
-    margin: 0px;
-    background-color: #5b6363;
-    color: white;
+html,
+body {
+  margin: 0px;
+  background-color: #5b6363;
+  color: white;
+  min-height: 100vh;
 }
 
-.titulo {
-    text-align: center;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    padding: 20px;
-    font-size: 25px;
+main.contenedor-juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
+header.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #0b0b1d, #1a1a2e, #16213e);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.titulo-principal {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(to right, #ff9a00, #ff2a6d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.contadores {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.contadores p {
+  background: rgba(10, 10, 25, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 0.7rem 1.2rem;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  min-width: 180px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  color: #4fc3f7; /* Azul claro brillante */
+  text-shadow: 0 0 8px rgba(79, 195, 247, 0.6);
+  transition: all 0.3s ease;
+}
+
+.contadores p:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background: rgba(15, 15, 35, 0.85);
+}
+
+/* Responsive: en móviles, apila los contadores */
+@media (max-width: 768px) {
+  header.titulo {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .titulo-principal {
+    font-size: 1.8rem;
+  }
+
+  .contadores {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contadores p {
+    min-width: 150px;
+    font-size: 1rem;
+  }
+}
+
+.row.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
 
 #pelicula-caratula {
-    display: flex;
-    gap: 20px;       
-    height: 320px;
+  display: flex;
+  gap: 20px;
+  height: 320px;
+  justify-content: center;
 }
-
 
 #elementos-pelicula {
-    display: flex;
-    height: 320px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  justify-content: center;
+  height: 320px;
 }
-
-
-.elemento {
-    background-color: black;
-    width: 210px;
-    height: 310px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-color: azure;
-    border-width: 2px;
-    border-radius: 10px;
-    border-style: solid;
-}
-
-
-#elementos-pelicula {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 10px; 
-}
-
 
 #elementos-pelicula .elemento:first-child {
-    margin-left: 0;
+  margin-left: 0;
+}
+
+.elemento {
+  background-color: black;
+  width: 210px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: azure;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
 }
 
 .recurso {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
+  pointer-events: none;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
 }
